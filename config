@@ -266,3 +266,6 @@ exec_always gnome-terminal
 
 exec_always compton -f -O 0.4 -I 0.4
 exec_always xset dmps force on
+exec_always nm-applet
+exec_always ibus-daemon -rx
+exec_always teamviewer daemon start
