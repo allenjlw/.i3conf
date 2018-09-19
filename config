@@ -259,7 +259,7 @@ focus_follows_mouse no
 # self start after login
 # set background
 exec_always feh --bg-scale /usr/share/backgrounds/Cathédrale_Marie-Rheine-du-Monde_by_Thierry_Pon.jpg
-exec_always gnome-terminal
+# exec_always gnome-terminal
 # exec_always firefox
 # exec_always nautilus
 # exec_always code
@@ -269,3 +269,4 @@ exec_always xset dmps force on
 exec_always nm-applet
 exec_always ibus-daemon -rx
 exec_always teamviewer daemon start
+exec_always dropbox start
