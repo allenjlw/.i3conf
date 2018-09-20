@@ -71,6 +71,10 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
+# move workspace between monitors
+bindsym $mod+Left move workspace to output left
+bindsym $mod+Right move workspace to output right
+
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
 # bindsym $mod+Down focus down
