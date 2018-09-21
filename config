@@ -150,7 +150,7 @@ set $w20 "20:"
 assign [class="X-terminal-emulator"] $w1
 
 assign [class="Chromium-browser"] $w2
-assign [class="Firefox"] $w2
+assign [class="Firefox"] $w12
 
 assign [class="Code"] $w3
 assign [class="Gedit"] $w3
