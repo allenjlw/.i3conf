@@ -71,6 +71,10 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
+# move workspace between monitors
+bindsym $mod+Left move workspace to output left
+bindsym $mod+Right move workspace to output right
+
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
 # bindsym $mod+Down focus down
@@ -146,10 +150,9 @@ set $w20 "20:"
 assign [class="X-terminal-emulator"] $w1
 
 assign [class="Chromium-browser"] $w2
-assign [class="Firefox"] $w2
+assign [class="Firefox"] $w12
 
 assign [class="Code"] $w3
-assign [class="Gedit"] $w3
 
 assign [class="Nautilus"] $w4
 
@@ -259,7 +262,7 @@ focus_follows_mouse no
 # self start after login
 # set background
 exec_always feh --bg-scale /usr/share/backgrounds/Cathédrale_Marie-Rheine-du-Monde_by_Thierry_Pon.jpg
-exec_always gnome-terminal
+# exec_always gnome-terminal
 # exec_always firefox
 # exec_always nautilus
 # exec_always code
@@ -269,3 +272,4 @@ exec_always xset dmps force on
 exec_always nm-applet
 exec_always ibus-daemon -rx
 exec_always teamviewer daemon start
+exec_always dropbox start
