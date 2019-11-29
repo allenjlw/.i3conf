@@ -51,7 +51,7 @@ font pango:UbuntuMono-R 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec gnome-terminal -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -130,27 +130,27 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # workspace definition
-set $w1 "1:Term "
-set $w2 "2:Web "
-set $w3 "3:Code "
-set $w4 "4:Email "
-set $w5 "5:Term "
-set $w6 "6:PDF "
-set $w7 "7:Code "
-set $w8 "8:Code "
-set $w9 "9:"
-set $w10 "10:Chat "
+set $w1 "1:"
+set $w2 "2:"
+set $w3 "3:Dest "
+set $w4 "4:Pizza "
+set $w5 "5:"
+set $w6 "6:"
+set $w7 "7:"
+set $w8 "8:"
+set $w9 "9:"
+set $w10 "10:"
 
-set $w11 "11:Term "
-set $w12 "12:Web "
-set $w13 "13:Code "
-set $w14 "14:Code "
-set $w15 "15:Code "
-set $w16 "16:"
-set $w17 "17:"
-set $w18 "18:"
-set $w19 "19:"
-set $w20 "20:"
+set $w11 "11:"
+set $w12 "12:"
+set $w13 "13:"
+set $w14 "14:"
+set $w15 "15:"
+set $w16 "16:"
+set $w17 "17:"
+set $w18 "18:"
+set $w19 "19:"
+set $w20 "20:"
 
 # app workspace assignment
 #assign [class="X-terminal-emulator"] $w1
@@ -265,10 +265,12 @@ bar {
 
 bar {
     output DP-1
+    tray_output none
 }
 
 bar {
     output eDP-1
+    tray_output none
 }
 
 # disable focus change by moving mouse
