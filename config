@@ -132,25 +132,25 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 # workspace definition
 set $w1 "1:"
 set $w2 "2:"
-set $w3 "3:Dest "
+set $w3 "3:"
 set $w4 "4:Pizza "
-set $w5 "5:"
+set $w5 "5:Dest "
 set $w6 "6:"
 set $w7 "7:"
 set $w8 "8:"
 set $w9 "9:"
 set $w10 "10:"
 
-set $w11 "11:"
-set $w12 "12:"
+set $w11 "11:"
+set $w12 "12:"
 set $w13 "13:"
 set $w14 "14:"
 set $w15 "15:"
 set $w16 "16:"
 set $w17 "17:"
 set $w18 "18:"
-set $w19 "19:"
-set $w20 "20:"
+set $w19 "19:"
+set $w20 "20:"
 
 # app workspace assignment
 #assign [class="X-terminal-emulator"] $w1
