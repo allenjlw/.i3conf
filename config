@@ -292,4 +292,4 @@ exec_always teamviewer daemon start
 exec_always dropbox start
 exec_always xrandr --output DP-1 --rotate left
 # start notification daemon
-exec --no-startup-id dunst
+exec_always --no-startup-id dunst
