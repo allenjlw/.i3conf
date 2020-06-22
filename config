@@ -121,9 +121,11 @@ bindsym $mod+p focus parent
 bindsym $mod+c focus child
 
 # volume control
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
+# bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pkill -RTMIN+10 i3blocks
 
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+# bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10% && pkill -RTMIN+10 i3blocks
 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
@@ -164,6 +166,10 @@ set $w20 "20:"
 #assign [class="Nautilus"] $w4
 #
 #assign [class="Evince"] $w6
+
+# hide firefox title bar
+for_window [class="Firefox"] border pixel 1
+new_window 1pixel
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -304,7 +310,7 @@ exec_always xset dmps force on
 exec_always nm-applet
 exec_always ibus-daemon -rx
 exec_always teamviewer daemon start
-exec_always dropbox start
+# exec_always dropbox start
 # exec_always xrandr --output DP-1 --rotate left
 # start notification daemon
-exec_always --no-startup-id dunst
+exec_always --no-startup-id /usr/lib/notification-daemon/notification-daemon
