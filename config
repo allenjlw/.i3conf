@@ -12,6 +12,7 @@
 set $mod Mod1
 set $sup Mod4
 
+
 # color setting
 set $base00 #101218
 set $base01 #1f222d
@@ -167,9 +168,20 @@ set $w20 "20:"
 #
 #assign [class="Evince"] $w6
 
-# hide firefox title bar
-for_window [class="Firefox"] border pixel 1
+# for_window [class="Firefox"] border none
+
 new_window 1pixel
+smart_borders on
+
+# for_window [class=".*"] border pixel 0
+
+smart_gaps on
+gaps inner 0
+gaps outer 0
+
+for_window [class="blueman-manager"] floating enable
+for_window [class="nm-connection-editor"] floating enable
+
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
