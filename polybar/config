@@ -60,9 +60,9 @@ font-0 = Hack:fontformat=truetype:size=9;1
 font-1 = Hack:fontformat=truetype:size=9;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
-modules-left = i3 xwindow
+modules-left = i3
 modules-center = date 
-modules-right = musicinfo battery volume wlan eth memory cpu
+modules-right = battery volume wlan eth memory cpu
 
 tray-position = right
 tray-padding = 9
@@ -119,7 +119,7 @@ font-0 = Hack:fontformat=truetype:size=9;1
 font-1 = Hack:fontformat=truetype:size=9;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
-modules-left = i3 xwindow
+modules-left = i3
 ;modules-center = date 
 ;modules-right = musicinfo battery
 
@@ -177,7 +177,7 @@ font-0 = Hack:fontformat=truetype:size=9;1
 font-1 = Hack:fontformat=truetype:size=9;1
 font-2 = FontAwesome:fontformat=truetype:size=9;1
 
-modules-left = i3 xwindow
+modules-left = i3
 ;modules-center = date 
 ;modules-right = musicinfo battery
 
@@ -304,7 +304,7 @@ label-connected = %local_ip%
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.my_color3}
 
 ramp-signal-0 = 1
 ramp-signal-1 = 2
@@ -321,14 +321,14 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = "eth: "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.my_foreground}
 label-connected = %local_ip%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.my_color3}
 
 [module/musicinfo]
 type = custom/script
@@ -360,11 +360,11 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-muted-background = ${colors.my_color1}
-format-volume-background = ${colors.my_color8}
-format-volume = <label-volume> <bar-volume> 
-label-muted = SOUND MUTED
-format-prefix = "Vol:"
+format-muted-background = ${colors.my_background}
+format-volume-background = ${colors.my_background}
+format-volume = <label-volume>
+label-muted = MUTED
+format-volume-prefix = "Vol: "
 
 ; Only applies if <ramp-volume> is used
 ;bar-volume-width = 10
@@ -552,18 +552,20 @@ margin-bottom = 5
 type = internal/cpu
 interval = 2
 format-prefix = "CPU: "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-background = ${colors.foreground-mod}
+format-prefix-foreground = ${colors.my_foreground}
+format-prefix-background = ${colors.my_background}
 format-underline = #f90000
 label = %percentage%%
+label-minlen = 5
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "Mem: "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.my_foreground}
 format-underline = #4bffdc
 label = %percentage_used%%
+label-minlen = 5
 
 ; vim:ft=dosini
 
