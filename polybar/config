@@ -254,7 +254,7 @@ label-mode-background = ${colors.my_color4}
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused = %index%
+label-focused = %name%
 ;label-focused-foreground = ${colors.my_foreground}
 label-focused-foreground = ${colors.my_foreground}
 label-focused-background = ${colors.my_background}
@@ -266,7 +266,7 @@ label-focused-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
 ; Available tokens:
@@ -274,7 +274,7 @@ label-unfocused-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-visible = %index%
+label-visible = %name%
 label-visible-underline = ${colors.my_foreground}
 label-visible-padding = 4
 
@@ -283,7 +283,7 @@ label-visible-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-foreground = ${colors.my_foreground}
 label-urgent-background = ${colors.my_background}
 label-urgent-underline = ${colors.my_color8}
