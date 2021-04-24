@@ -325,12 +325,12 @@ format-foreground = ${colors.my_color2}
 type = internal/date
 interval = 5
 
-date =
-date-alt = "%d/%m/%Y"
+date = "%d/%m/%Y"
+date-alt =
 
-time = "%a %b %d, %I:%M %p "
+time = %H:%M
+time-alt = "%a %b %d, %I:%M %p "
 
-time-alt = %H:%M
 
 format-prefix-foreground = ${colors.my_foreground}
 format-underline = ${colors.my_color5}
