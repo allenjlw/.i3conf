@@ -53,8 +53,8 @@ border-color = ${colors.my_color4}
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Hack:fontformat=truetype:size=9;1
 font-1 = Hack:fontformat=truetype:size=9;1
@@ -62,7 +62,7 @@ font-2 = FontAwesome:fontformat=truetype:size=9;1
 
 modules-left = i3 xwindow
 modules-center = date 
-modules-right = musicinfo battery
+modules-right = musicinfo battery volume wlan eth memory cpu
 
 tray-position = right
 tray-padding = 9
@@ -290,44 +290,45 @@ label-urgent-underline = ${colors.my_color8}
 label-urgent-padding = 2
 
 
-;[module/wlan]
-;type = internal/network
-;interface = wlo1
-;interval = 3.0
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
 
-;format-connected-background = ${colors.my_background}
+format-connected-background = ${colors.my_background}
+format-connected-prefix = "wlan: "
 ;format-connected = "<ramp-signal><label-connected>"
-;format-connected-underline = #9f78e1
-;label-connected =
+format-connected-underline = #9f78e1
+label-connected = %local_ip%
 
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
-;ramp-signal-0 = 1
-;ramp-signal-1 = 2
-;ramp-signal-2 = 3
-;ramp-signal-3 = 4
-;ramp-signal-4 = 5
-;ramp-signal-foreground = ${colors.my_foreground}
+ramp-signal-0 = 1
+ramp-signal-1 = 2
+ramp-signal-2 = 3
+ramp-signal-3 = 4
+ramp-signal-4 = 5
+ramp-signal-foreground = ${colors.my_foreground}
 
 
-;[module/eth]
-;type = internal/network
-;interface = enp0s25
-;interval = 3.0
-;
-;format-connected-underline = #55aa55
-;format-connected-prefix = ""
-;format-connected-prefix-foreground = ${colors.foreground-alt}
-;label-connected = %local_ip%
-;
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = "eth: "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
 ;format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/musicinfo]
 type = custom/script
@@ -356,13 +357,14 @@ format-underline = ${colors.my_color5}
 label = %date% %time%
 
 
-;[module/volume]
-;type = internal/volume
-;
-;format-muted-background = ${colors.my_color1}
-;format-volume-background = ${colors.my_color8}
-;format-volume = <label-volume> <bar-volume> 
-;label-muted = SOUND MUTED
+[module/volume]
+type = internal/volume
+
+format-muted-background = ${colors.my_color1}
+format-volume-background = ${colors.my_color8}
+format-volume = <label-volume> <bar-volume> 
+label-muted = SOUND MUTED
+format-prefix = "Vol:"
 
 ; Only applies if <ramp-volume> is used
 ;bar-volume-width = 10
@@ -394,17 +396,20 @@ full-at = 99
 ;format-full-background = ${colors.my_color4}
 format-full-background = ${colors.my_background}
 format-charging-background = ${colors.my_background}
-format-charging = "⁣  <label-charging> <animation-charging> "
+format-charging = "<label-charging> <animation-charging> "
 format-charging-underline = ${colors.my_color2}
+format-charging-prefix = "Bat: "
 
 ;format-discharging-background = ${colors.my_color4}
 format-discharging-background = ${colors.my_background}
-format-discharging = "⁣ <label-discharging> <ramp-capacity> "
+format-discharging = " <label-discharging> <ramp-capacity> "
 format-discharging-underline = ${self.format-charging-underline}
+format-discharging-prefix = "Bat: "
 
-;format-full-prefix-foreground = ${colors.my_color4}
-format-full-prefix-foreground = ${colors.my_background}
+format-full-prefix-foreground = ${colors.my_foreground}
+;format-full-prefix-foreground = ${colors.my_background}
 format-full-underline = ${self.format-charging-underline}
+format-full-prefix = "Bat: "
 
 format-charing-background = ${colors.my_background}
 
@@ -542,28 +547,29 @@ margin-bottom = 5
 ;type = internal/backlight
 ;card = intel_backlight
 ;
-;[module/cpu]
-;type = internal/cpu
-;interval = 2
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-background = ${colors.foreground-mod}
-;format-underline = #f90000
-;label = %percentage%%
-;
-;[module/memory]
-;type = internal/memory
-;interval = 2
-;format-prefix = " "
-;format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #4bffdc
-;label = %percentage_used%%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-background = ${colors.foreground-mod}
+format-underline = #f90000
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "Mem: "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
 
 ; vim:ft=dosini
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+;label = %title:0:30:...%
 label-padding = 10
 ;label-underline = ${colors.my_color7}
 label-foreground = ${colors.my_color4}
