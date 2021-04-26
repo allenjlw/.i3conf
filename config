@@ -344,7 +344,8 @@ exec_always xset dmps force on
 exec_always nm-applet
 exec_always blueman-applet
 exec_always ibus-daemon -rx
-exec_always kmix
+exec_always volumeicon
+# exec_always kmix
 # exec_always dropbox start
 # exec_always xrandr --output DP-1 --rotate left
 # start notification daemon
